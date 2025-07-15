@@ -1,0 +1,9 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  /* Base color*/
+  --color-transparent: transparent;
+}
