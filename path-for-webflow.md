@@ -8,4 +8,4 @@
 <script type="module" src="https://kompot-croc-1.vercel.app/pages/category/category.js"></script>
 
 <link rel="stylesheet" href="https://kompot-croc-1.vercel.app/pages/template/template.css">
-<script type="module" src="https://kkompot-croc-1.vercel.app/pages/template/template.js"></script>
+<script type="module" src="https://kompot-croc-1.vercel.app/pages/template/template.js"></script>
