@@ -26,12 +26,13 @@ function finalSection() {
   sectionFinal.classList.remove('hidden');
 }
 
+// Аккордион в FAQ
 function accordion() {
   var accordion = (function () {
     var $accordion = $('.add-ons_js-accordion');
     var $accordion_header = $accordion.find('.add-ons_js-accordion-header');
     var $accordion_item = $('.add-ons_js-accordion-item');
-    var $iconArrow = $('.add-ons_title-icon-wrapper-2'); // исправлено
+    var $iconArrow = $('.add-ons_title-icon-wrapper');
 
     var settings = {
       speed: 100,
@@ -49,7 +50,7 @@ function accordion() {
         if (settings.oneOpen && $('.add-ons_js-accordion-item.active').length > 1) {
           $('.add-ons_js-accordion-item.active:not(:first)')
             .removeClass('active')
-            .find($iconArrow) // исправлено
+            .find($iconArrow)
             .removeClass('active');
         }
 
@@ -70,14 +71,14 @@ function accordion() {
             .find('.add-ons_js-accordion-body')
             .slideUp()
             .end()
-            .find($iconArrow) // исправлено
+            .find($iconArrow)
             .removeClass('active');
         }
 
         $this
           .closest('.add-ons_js-accordion-item')
           .toggleClass('active')
-          .find($iconArrow) // исправлено
+          .find($iconArrow)
           .toggleClass('active');
         $this.next().stop().slideToggle(settings.speed);
       },
@@ -88,9 +89,6 @@ function accordion() {
     accordion.init({ speed: 400, oneOpen: true });
   });
 }
-
-// Вызов функции
-accordion();
 
 // Слайдер "Как отправить заявку"
 function swiperBidAnimation() {
