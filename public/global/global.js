@@ -20,7 +20,7 @@ export function isMobile() {
 }
 
 export const BASE_LIST_URL = 'https://kompot-bot.pav.studio';  
-export const BASE_BOT_URL = 'https://t.me/KompOtCROC_vote_dev_bot';
+export const BASE_BOT_URL = 'https://t.me/KompOtCROC_vote_bot'; 
 
 //
 // FUNCTIONS
