@@ -413,7 +413,7 @@ async function telegramBotInit() {
     });
   }
 
-  const BASE_LIST_URL = 'https://kompot-bot.croc.ru'; // Убедитесь, что URL актуален
+  const BASE_LIST_URL = 'https://kompot-bot.pav.studio'; // Убедитесь, что URL актуален
   const reqraw = await fetch(`${BASE_LIST_URL}/api/pc_list`);
   const req = await reqraw.json();
 
