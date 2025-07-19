@@ -351,7 +351,7 @@ function expertDropdownAnimation() {
 //  const nom4 = Object.values(req.list)
  //   .filter((e) => e.mvp === true)
 //    .sort((a, b) => b.likes - a.likes)
-    .slice(0, 4);
+ //   .slice(0, 4);
 //
 //  if (!nom4.length) {
     //document.querySelector("#nom4cont").style.display = "none";
