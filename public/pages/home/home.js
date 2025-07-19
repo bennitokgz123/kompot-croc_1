@@ -287,7 +287,7 @@ function expertDropdownAnimation() {
 //    newItem.querySelector('#likes').innerText = item.likes;
 //    if (mvp_click) {
 //      newItem.querySelector('#likestag').style.display = 'none';
-    }
+  //  }
 //    newItem.querySelector('#num').innerText = item.id;
 //    newItem.querySelector('#price').innerText = item.price ? '>100' : '<100';
 //    newItem.querySelector('#bg').style.backgroundImage = `url(${BASE_LIST_URL}/images/${item.photos[0]})`;
