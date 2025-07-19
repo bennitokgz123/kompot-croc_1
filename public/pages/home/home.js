@@ -246,120 +246,120 @@ function expertDropdownAnimation() {
 }
 
 // Код для бота
-async function telegramBotInit() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const pcParam = urlParams.get('pc');
+//async function telegramBotInit() {
+//  const urlParams = new URLSearchParams(window.location.search);
+//  const pcParam = urlParams.get('pc');
 
-  if (pcParam !== null) {
-    location.href = '/template?pc=' + pcParam;
-  }
+//  if (pcParam !== null) {
+//    location.href = '/template?pc=' + pcParam;
+//  }
 
-  const botlinks = document.querySelectorAll('.botlink');
+//  const botlinks = document.querySelectorAll('.botlink');
 
-  const utmSource = urlParams.get('utm_source') || 'null';
-  const utmMedium = urlParams.get('utm_medium') || 'null';
-  const utmCampaign = urlParams.get('utm_campaign') || 'null';
+//  const utmSource = urlParams.get('utm_source') || 'null';
+//  const utmMedium = urlParams.get('utm_medium') || 'null';
+//  const utmCampaign = urlParams.get('utm_campaign') || 'null';
 
-  if (utmSource !== 'null' || utmMedium !== 'null' || utmCampaign !== 'null') {
-    const queryString = `?start=${utmSource}-${utmMedium}-${utmCampaign}`;
+//  if (utmSource !== 'null' || utmMedium !== 'null' || utmCampaign !== 'null') {
+//    const queryString = `?start=${utmSource}-${utmMedium}-${utmCampaign}`;
 
-    botlinks.forEach((link) => {
-      link.href += queryString;
-    });
-  }
+//    botlinks.forEach((link) => {
+//      link.href += queryString;
+//    });
+//  }
 
-  const pctemplate = document.querySelector('#pcitem');
+//  const pctemplate = document.querySelector('#pcitem');
 
   //const mobtemplate = document.querySelector("#mobitem");
   //const mobcontainer = document.querySelector("#moblist");
 
   //const modal = document.querySelector("#modal");
 
-  const reqraw = await fetch(`${BASE_LIST_URL}/api/pc_list`);
+//  const reqraw = await fetch(`${BASE_LIST_URL}/api/pc_list`);
   //const voteel = document.querySelector("#vote");
   //let voteh = 1130;
 
   // const req = await reqraw.json();
-  const req = await reqraw.json();
+//  const req = await reqraw.json();
 
-  const filler = (prefix, template, container, item, mvp_click = false) => {
-    const newItem = template.cloneNode(true);
-    newItem.querySelector('#likes').innerText = item.likes;
-    if (mvp_click) {
-      newItem.querySelector('#likestag').style.display = 'none';
+//  const filler = (prefix, template, container, item, mvp_click = false) => {
+//    const newItem = template.cloneNode(true);
+//    newItem.querySelector('#likes').innerText = item.likes;
+//    if (mvp_click) {
+//      newItem.querySelector('#likestag').style.display = 'none';
     }
-    newItem.querySelector('#num').innerText = item.id;
-    newItem.querySelector('#price').innerText = item.price ? '>100' : '<100';
-    newItem.querySelector('#bg').style.backgroundImage = `url(${BASE_LIST_URL}/images/${item.photos[0]})`;
-    newItem.addEventListener('click', () => {
-      modal.style.display = 'block';
-      modal.querySelector(`#${prefix}num`).innerText = item.id;
-      modal.querySelector(`#${prefix}votebtn`).style.display = mvp_click ? 'none' : 'flex';
-      modal.querySelector(`#${prefix}votebtn`).href = `${BASE_BOT_URL}?start=${item.id}`;
-      Object.values(item.spec).forEach((spec, i) => {
-        modal.querySelector(`#${prefix}spec${i + 1}`).innerText = spec;
-      });
-      modal.querySelector(`#${prefix}photos`).innerHTML = '';
-      item.photos.forEach((photo) => {
-        const img = document.createElement('img');
-        img.src = `${BASE_LIST_URL}/images/${photo}`;
-        img.width = prefix === 'mob' ? 246 : 500;
-        img.height = prefix === 'mob' ? 246 : 500;
-        img.style.objectFit = 'cover';
-        modal.querySelector(`#${prefix}photos`).appendChild(img);
-      });
-    });
-    container.appendChild(newItem);
-  };
+//    newItem.querySelector('#num').innerText = item.id;
+//    newItem.querySelector('#price').innerText = item.price ? '>100' : '<100';
+//    newItem.querySelector('#bg').style.backgroundImage = `url(${BASE_LIST_URL}/images/${item.photos[0]})`;
+ //   newItem.addEventListener('click', () => {
+  //    modal.style.display = 'block';
+ //     modal.querySelector(`#${prefix}num`).innerText = item.id;
+////      modal.querySelector(`#${prefix}votebtn`).style.display = mvp_click ? 'none' : 'flex';
+////      modal.querySelector(`#${prefix}votebtn`).href = `${BASE_BOT_URL}?start=${item.id}`;
+//      Object.values(item.spec).forEach((spec, i) => {
+//        modal.querySelector(`#${prefix}spec${i + 1}`).innerText = spec;
+//      });
+ //     modal.querySelector(`#${prefix}photos`).innerHTML = '';
+ //     item.photos.forEach((photo) => {
+//        const img = document.createElement('img');
+  //      img.src = `${BASE_LIST_URL}/images/${photo}`;
+  //      img.width = prefix === 'mob' ? 246 : 500;
+ //       img.height = prefix === 'mob' ? 246 : 500;
+ //       img.style.objectFit = 'cover';
+  //      modal.querySelector(`#${prefix}photos`).appendChild(img);
+//      });
+//    });
+//    container.appendChild(newItem);
+//  };
 
-  const nom1 = Object.values(req.list)
-    .filter((e) => e.cat === 1)
-    .sort((a, b) => b.likes - a.likes)
-    .slice(0, 4);
+//  const nom1 = Object.values(req.list)
+//    .filter((e) => e.cat === 1)
+//    .sort((a, b) => b.likes - a.likes)
+//    .slice(0, 4);
 
-  if (!nom1.length) {
+//  if (!nom1.length) {
     //document.querySelector("#nom1cont").style.display = "none";
-    document.querySelector('#mobnom1btn').style.display = 'none';
-  } else {
-    nom1.forEach((e) => filler('', pctemplate, document.querySelector('#nom1list'), e));
-  }
+//    document.querySelector('#mobnom1btn').style.display = 'none';
+//  } else {
+//    nom1.forEach((e) => filler('', pctemplate, document.querySelector('#nom1list'), e));
+//  }
 
-  const nom2 = Object.values(req.list)
-    .filter((e) => e.cat === 2)
-    .sort((a, b) => b.likes - a.likes)
+//  const nom2 = Object.values(req.list)
+//    .filter((e) => e.cat === 2)
+//    .sort((a, b) => b.likes - a.likes)
+//    .slice(0, 4);
+
+//  if (!nom2.length) {
+//    //document.querySelector("#nom2cont").style.display = "none";
+//    document.querySelector('#mobnom2btn').style.display = 'none';
+//  } else {
+//    nom2.forEach((e) => filler('', pctemplate, document.querySelector('#nom2list'), e));
+//  }
+
+//  const nom3 = Object.values(req.list)
+//    .filter((e) => e.cat === 3)
+//    .sort((a, b) => b.likes - a.likes)
+//    .slice(0, 4);
+
+//  if (!nom3.length) {
+//    //document.querySelector("#nom3cont").style.display = "none";
+//    document.querySelector('#mobnom3btn').style.display = 'none';
+//  } else {
+//    nom3.forEach((e) => filler('', pctemplate, document.querySelector('#nom3list'), e));
+//  }
+
+//  const nom4 = Object.values(req.list)
+ //   .filter((e) => e.mvp === true)
+//    .sort((a, b) => b.likes - a.likes)
     .slice(0, 4);
-
-  if (!nom2.length) {
-    //document.querySelector("#nom2cont").style.display = "none";
-    document.querySelector('#mobnom2btn').style.display = 'none';
-  } else {
-    nom2.forEach((e) => filler('', pctemplate, document.querySelector('#nom2list'), e));
-  }
-
-  const nom3 = Object.values(req.list)
-    .filter((e) => e.cat === 3)
-    .sort((a, b) => b.likes - a.likes)
-    .slice(0, 4);
-
-  if (!nom3.length) {
-    //document.querySelector("#nom3cont").style.display = "none";
-    document.querySelector('#mobnom3btn').style.display = 'none';
-  } else {
-    nom3.forEach((e) => filler('', pctemplate, document.querySelector('#nom3list'), e));
-  }
-
-  const nom4 = Object.values(req.list)
-    .filter((e) => e.mvp === true)
-    .sort((a, b) => b.likes - a.likes)
-    .slice(0, 4);
-
-  if (!nom4.length) {
+//
+//  if (!nom4.length) {
     //document.querySelector("#nom4cont").style.display = "none";
-    document.querySelector('#mobnom4btn').style.display = 'none';
-  } else {
-    nom4.forEach((e) => filler('', pctemplate, document.querySelector('#nom4list'), e, true));
-  }
-
+//    document.querySelector('#mobnom4btn').style.display = 'none';
+//  } else {
+//    nom4.forEach((e) => filler('', pctemplate, document.querySelector('#nom4list'), e, true));
+//  }
+//было скрыто до
   // if (pcParam) {
   //   if (!req.list[pcParam]) return;
 
