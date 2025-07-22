@@ -19,7 +19,7 @@ export function isMobile() {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
-export const BASE_LIST_URL = 'https://kompot-bot.pav.studio';  
+export const BASE_LIST_URL = 'https://kompot-bot.croc.ru';  
 export const BASE_BOT_URL = 'https://t.me/KompOtCROC_vote_bot'; 
 
 //
