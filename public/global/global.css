@@ -7,3 +7,6 @@ html {
   /* Base color*/
   --color-transparent: transparent;
 }
+.h-item_price {
+  display: none !important;
+}
