@@ -88,10 +88,9 @@ if (isMobile() && window.innerWidth < 479) {
 }
 
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.h-item_price').forEach((el) => {
-      el.style.display = 'none';
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.h-item_price').forEach((el) => {
+    el.remove();
   });
-</script>
+});
+
