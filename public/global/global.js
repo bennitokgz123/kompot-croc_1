@@ -1,3 +1,15 @@
+const hidePrice = () => {
+    const prices = document.querySelectorAll('.h-item_price');
+    if (prices.length > 0) {
+      prices.forEach((el) => el.style.display = 'none');
+    } else {
+      // Пробуем ещё раз через 200ms, пока не появится
+      setTimeout(hidePrice, 200);
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', hidePrice);
+
 'use strict';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -88,9 +100,4 @@ if (isMobile() && window.innerWidth < 479) {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.h-item_price').forEach((el) => {
-    el.remove();
-  });
-});
 
