@@ -1,3 +1,8 @@
+if (window.location.pathname === '/template') {
+  window.location.replace('/template.html' + window.location.search);
+}
+
+
 'use strict';
 import { BASE_LIST_URL } from '/global/global.js';
 import { BASE_BOT_URL } from '/global/global.js';
