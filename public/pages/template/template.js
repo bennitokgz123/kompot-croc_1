@@ -33,11 +33,11 @@ window.addEventListener('DOMContentLoaded', async () => {
   const item = req.list[pcid];
 
   // Назначение ссылки "Назад"
-  const backLink = catParam !== null ? cat[catParam] : cat[item.cat];
   document.querySelector('#templateButtonBack').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.location.href = backLink;
-  });
+  e.preventDefault();
+  window.location.href = '/kompot-2025.html';
+});
+
 
   document.querySelector('#num').innerText = item.id;
 
