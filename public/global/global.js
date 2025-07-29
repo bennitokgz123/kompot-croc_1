@@ -86,3 +86,12 @@ if (!isMobile() && window.innerWidth > 992) {
 // ONLY MOBILE FUNCTIONS
 if (isMobile() && window.innerWidth < 479) {
 }
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.h-item_price').forEach((el) => {
+      el.style.display = 'none';
+    });
+  });
+</script>
